@@ -158,7 +158,7 @@ p{
     color: crimson;
 }
 
-#header .nav-list ul:hover a ::after{
+#header .nav-list ul:hover a::after{
     transform: translate(-50% -50%) scale(1);
     letter-spacing: initial;
 }
@@ -197,8 +197,8 @@ p{
     z-index: -1;
 }
 
-#header .hamburger .bar ::after,
-#header .hamburger .bar ::before{
+#header .hamburger .bar::after,
+#header .hamburger .bar::before{
     content: '';
     position: absolute;
     height: 100%;
@@ -209,19 +209,19 @@ p{
     transition-property: top, bottom;
 }
 
-#header .hamburger .bar ::after{
+#header .hamburger .bar::after{
     top: 8px;
 }
 
-#header .hamburger .bar ::before{
+#header .hamburger .bar::before{
     bottom: 8px;
 }
 
-#header .hamburger.active .bar ::before{
+#header .hamburger.active .bar::before{
     bottom: 0;
 }
 
-#header .hamburger.active .bar ::after{
+#header .hamburger.active .bar::after{
     top: 0;
 }
 
@@ -229,7 +229,7 @@ p{
 /* this is the hero section */
 
 #hero{
-    background-image: url(images/landpic.jpeg);
+    background-image: url(images/bck.jpg);
     background-size: cover;
     position: relative;
     z-index: 1;
@@ -277,3 +277,340 @@ p{
     animation-delay: 3s;
 }
 
+/* CONTINUATION OF YESTERDAY */
+
+#hero h1 span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: crimson;
+    animation: text_reveal_box 1s ease;
+    animation-delay: 0.5s;
+}
+
+#hero h1:nth-child(1) span{
+    animation-delay: 1.5s;
+}
+
+#hero h1:nth-child(2) span{
+    animation-delay: 0.5s;
+}
+
+#hero h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+
+#about .about{
+    flex-direction: column-reverse;
+    text-align: center;
+    max-width: 1200px;
+    padding: 100px 20px;
+    margin: 0 auto;
+}
+
+#about .col-left{
+    width: 250px;
+    height: 360px;
+}
+
+#about .col-right{
+    width: 100%;
+}
+
+#about .col-right h1,
+#about .col-right h3{
+    font-size: 1.8rem ;
+    margin-bottom: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+}
+
+#about .col-right p{
+    margin-bottom: 20px;
+}
+
+#about .col-right .cta{
+    color:black;
+    margin-bottom: 50px;
+    padding: 10px 20px;
+    font-size: 2rem;
+}
+
+#about .col-left .about-img{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    border: 10px solid white;
+}
+
+#about .col-left .about-img::after{
+    position: absolute;
+    left: -33px;
+    content: '';
+    top: 19px;
+    height: 98%;
+    width: 98%;
+    border: 7px solid crimson;
+    z-index: -1;
+}
+/* this is the service section  */
+
+#service .service{
+    flex-direction: column;
+    text-align: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 100px 0;
+    background-color: burlywood;
+}
+
+#service .service-top{
+    max-width:500px;
+    margin: 0 auto;
+}
+
+#service .service-top h1{
+    font-size: 3rem;
+
+}
+
+#service .service-top p{
+    font-size: 1.5rem;
+    margin-top: 20px;
+    text-align: left;
+}
+
+#service .service-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+#service .service-item{
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 10px;
+    align-items: flex-start;
+    justify-content: center;
+    background-image: url(images/web.png);
+    /* background-color: burlywood; */
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin: 10px 5%;
+    /* color: white; */
+}
+
+#service .service-item::after{
+    content: '';
+    position:absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(60deg,white, #485563);
+    opacity: 0.9;
+    z-index: -1;
+    /* color: white; */
+}
+
+#service .service-item h3{
+    color: white;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 2rem;
+
+}
+
+#service .service-item p{
+    color: white;
+    text-align: left;
+
+}
+
+#project .project{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+
+}
+
+#project .header h1{
+    margin-bottom: 50px;
+}
+
+#project .all-project{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#project .project-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 20px;
+}
+
+#project .project-info{
+    padding: 30px;
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(60deg, #29323c 0%,#485563 100%);
+    color: white;
+}
+
+#project .project-info h2{
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+#project .project-info h4{
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+#project .project-info p{
+    color: wheat;
+}
+
+#project .project-img{
+    flex-basis: 50%;
+    overflow: hidden;
+    height: 300px;
+    position: relative;
+}
+
+#project .project-img:after{
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: linear-gradient(60deg, #29323c 0%,#485563 100%);
+    opacity: 0.7;
+}
+
+#project .project-img img{
+    transition: 0.3s ease transform;
+}
+
+#project .project-item:hover .project-img{
+    scale: 1.1;
+}
+
+/* this is the section for contact */
+
+#contact .contact{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto ;
+    width: 90%;
+    /* background-color: purple; */
+}
+
+#contact .contact-items{
+    width: 100%;
+}
+
+#contact .contact-item{
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 18px #0000002c;
+    transition: 0.3s ease boz-shadow;
+}
+
+#contact .contact-item:hover{
+    transition: 0.3s ease boz-shadow;
+    background-color: skyblue;
+    color: crimson;
+}
+
+#contact .contact-info h3{
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+#contact .contact-info h4{
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 2rem;
+}
+
+
+#footer{
+    background-image: linear-gradient(60deg, #29323c 0%,#485563 100%);
+}
+
+#footer .footer{
+    min-height: 10px;
+    flex-direction: column;
+    padding-top:  50px;
+    padding-bottom: 10px;
+}
+
+#footer .footer h1{
+    color:white;
+    font-weight: 500;
+    font-size: 1.9rem;
+    letter-spacing: 0.1rem;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+#footer .footer h2{
+    color:white;
+    font-weight: 500;
+    font-size: 1.9rem;
+    margin-bottom: 15px;
+}
+
+#footer .social-media{
+    display: flex;
+    margin-bottom: 30px;
+}
+
+#footer .social-page{
+    height: 50px;
+    width: 50px;
+}
+
+#footer .social-page i{
+    color:red;
+    font-size: 2rem;
+}
+
+#footer .social-page i:hover{
+    color:white;
+}
+
+.footer p{
+    color: white;
+    font-size: 1.3rem;
+}
