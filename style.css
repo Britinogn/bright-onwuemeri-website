@@ -8,8 +8,8 @@
 }
 
 html{
-    font-size: 20px;
-    font-family: 'poppins' sans-serif;
+    font-size: 12px;
+    font-family: 'poppins', sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -26,6 +26,99 @@ a{
     justify-content: center;
 }
 
+#hero{
+    background-image: url(images/bck.jpg);
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+#hero::after{
+    content:'';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+#hero .hero{
+    max-width: 1200px;
+    margin:0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+
+#hero h1{
+    display: block;
+    width: fit-content;
+    font-size: 4rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+#hero h1:nth-child(1){
+    animation-delay: 1s;
+}
+
+#hero h1:nth-child(2){
+    animation-delay: 2s;
+}
+
+#hero h1:nth-child(3){
+    animation:text_reveal_name .5s ease forwards;
+    animation-delay: 3.5s;
+}
+
+#hero h1 span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color:crimson;
+    animation: text_reveal_box 1s;
+    animation-delay:.5s;
+}
+
+#hero h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+
+#hero h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+
+#hero h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+
+
+
+#hero .cta{
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: transparent;
+    border: 2px solid crimson;
+    color: crimson;
+    font-size: 2em;
+    letter-spacing: 1rem;
+    transition: .3s ease;
+    text-transform: uppercase;
+    margin-top: 50px;
+    transition-property: background-color, color;
+}
+
+#hero .cta:hover{
+    color: white;
+    background-color: crimson;
+}
+
 img{
     height: 100%;
     width: 100%;
@@ -38,13 +131,14 @@ p{
     margin-top: 5px ;
     line-height: 2.5rem;
     font-weight: 300;
-    letter-spacing: 0.1rem;
+    /* letter-spacing: 0.1rem; */
 }
 
 .section-title{
     font-weight: 300;
     color: black;
-    font-size:4rem ;
+    /* color:white; */
+    font-size:50px;
     margin-bottom: 10px;
     letter-spacing: 0.2rem;
     text-transform:uppercase ;
@@ -53,12 +147,14 @@ p{
 
 .section-title span{
     color: blue;
+    /* color:white; */
 }
 
 .cta{
     display: inline-block;
     padding: 10px 30px;
-    color: blue ;
+    /* color: blue ; */
+    color: white;
     background-color: transparent;
     border: 2px solid crimson;
     font-size: 2rem;
@@ -225,82 +321,7 @@ p{
     top: 0;
 }
 
-
-/* this is the hero section */
-
-#hero{
-    background-image: url(images/bck.jpg);
-    background-size: cover;
-    position: relative;
-    z-index: 1;
-}
-
-#hero ::after{
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    /* background-color:black; */
-    opacity:0.7;
-    z-index: -1;
-}
-
-#hero .hero{
-    width: 1200px;
-    margin:0 auto;
-    padding: 0 50px;
-    justify-content: flex-start;
-}
-
-.hero h1{
-    display: block;
-    width: fit-content;
-    font-size: 3.5rem;
-    position: relative;
-    color: transparent;
-    animation: text_reveal 0.5s ease forwards;
-    animation-delay: 1s;
-}
-
-#hero h1 :nth-child(1){
-    animation-delay: 1s;
-}
-
-#hero h1 :nth-child(2){
-    animation-delay: 2s;
-}
-
-#hero h1 :nth-child(3){
-    animation: text_reveal 0.5s ease forwards;
-    animation-delay: 3s;
-}
-
-/* CONTINUATION OF YESTERDAY */
-
-#hero h1 span{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0;
-    background-color: crimson;
-    animation: text_reveal_box 1s ease;
-    animation-delay: 0.5s;
-}
-
-#hero h1:nth-child(1) span{
-    animation-delay: 1.5s;
-}
-
-#hero h1:nth-child(2) span{
-    animation-delay: 0.5s;
-}
-
-#hero h1:nth-child(3) span{
-    animation-delay: 2.5s;
-}
+/* This is the section for About */
 
 #about .about{
     flex-direction: column-reverse;
@@ -329,6 +350,11 @@ p{
 
 #about .col-right p{
     margin-bottom: 20px;
+    text-align: start;
+}
+
+#about .about .section-title{ 
+    font-size: 50px;
 }
 
 #about .col-right .cta{
@@ -355,6 +381,7 @@ p{
     border: 7px solid crimson;
     z-index: -1;
 }
+
 /* this is the service section  */
 
 #service .service{
@@ -363,23 +390,18 @@ p{
     max-width: 1500px;
     margin: 0 auto;
     padding: 100px 0;
-    background-color: burlywood;
 }
+
 
 #service .service-top{
     max-width:500px;
     margin: 0 auto;
 }
 
-#service .service-top h1{
-    font-size: 3rem;
-
-}
-
 #service .service-top p{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-top: 20px;
-    text-align: left;
+    text-align: center;
 }
 
 #service .service-bottom{
@@ -399,13 +421,19 @@ p{
     align-items: flex-start;
     justify-content: center;
     background-image: url(images/web.png);
-    /* background-color: burlywood; */
     background-size: cover;
     position: relative;
     z-index: 1;
     overflow: hidden;
     margin: 10px 5%;
-    /* color: white; */
+}
+
+.service-item p{
+    font-size: 1.5em;
+}
+
+.service-item .fa{
+    font-size: 4em;
 }
 
 #service .service-item::after{
@@ -415,10 +443,10 @@ p{
     top: 0;
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(60deg,white, #485563);
+    background-image: linear-gradient(60deg,rgb(203, 194, 194), #485563);
     opacity: 0.9;
     z-index: -1;
-    /* color: white; */
+    
 }
 
 #service .service-item h3{
@@ -435,6 +463,8 @@ p{
 
 }
 
+/* this is the section for projects */
+
 #project .project{
     flex-direction: column;
     max-width: 1200px;
@@ -443,7 +473,7 @@ p{
 
 }
 
-#project .header h1{
+#project .project-header h1{
     margin-bottom: 50px;
 }
 
@@ -461,7 +491,8 @@ p{
     flex-direction: column;
     width: 80%;
     margin: 20px auto;
-    border-radius: 20px;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 #project .project-info{
@@ -494,8 +525,8 @@ p{
 #project .project-img{
     flex-basis: 50%;
     overflow: hidden;
-    height: 300px;
     position: relative;
+    height: 300px;
 }
 
 #project .project-img:after{
@@ -514,7 +545,7 @@ p{
 }
 
 #project .project-item:hover .project-img{
-    scale: 1.1;
+    transform: scale(1.1);
 }
 
 /* this is the section for contact */
@@ -524,7 +555,6 @@ p{
     max-width: 1200px;
     margin: 0 auto ;
     width: 90%;
-    /* background-color: purple; */
 }
 
 #contact .contact-items{
@@ -613,4 +643,100 @@ p{
 .footer p{
     color: white;
     font-size: 1.3rem;
+}
+
+/* this the key frrame section */
+
+@keyframes text_reveal_box{
+    50%{
+        width: 100%;
+        left: 0;
+    }
+    100%{
+        width: 0;
+        left: 100%;  
+    }
+}
+
+@keyframes text_reveal{
+    100%{
+        color: white;
+    }
+}
+
+@keyframes text_reveal_name{
+    100%{
+        color: crimson;
+    }
+}
+
+
+@keyframes hamburger_puls{
+    0%{
+        opacity: 1;
+        transform:scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform:scale(1.4);
+
+    }
+}
+
+
+@media only screen and (min-width: 768px){
+    .cta{
+        font-size: 2.5rem;
+        padding: 20px 60px;
+    }
+
+    h1 .section-title{
+        font-size: 6rem;
+    }
+
+    #hero h1{
+        font-size: 7rem;
+    }
+
+    #service .service-bottom .service-item{
+        flex-basis: 45% ;
+        margin: 2.5%;
+    }
+
+    #project .project-item{
+        flex-direction: row;   
+    }
+
+    #project .project-item:nth-child(even){
+        flex-direction: row-reverse ;
+    }
+
+    #project .project-item{
+        height: 400px;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    #project .all-project .project-info{
+        height: 100%;
+    }
+
+    #project .all-project .project-img{
+        height: 100%;
+    }
+
+    #about .about{
+        flex-direction: row;
+    }
+
+    #about .col-left{
+        width: 600px;
+        height: 400px;
+        padding-left: 60px;
+    }
+
+    /* #about .about-img{
+        flex-direction: column-reverse;
+    } */
 }
